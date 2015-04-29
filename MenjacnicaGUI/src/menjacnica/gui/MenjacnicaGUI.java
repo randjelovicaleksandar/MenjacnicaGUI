@@ -199,6 +199,11 @@ public class MenjacnicaGUI extends JFrame {
 	private JButton getBtnNewButton() {
 		if (btnNewButton == null) {
 			btnNewButton = new JButton("Dodaj kurs");
+			btnNewButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					prikaziDodaj();
+				}
+			});
 		}
 		return btnNewButton;
 	}
@@ -372,5 +377,19 @@ public class MenjacnicaGUI extends JFrame {
 		if(opcija == JOptionPane.YES_OPTION) {
 			System.exit(0);
 		}
+	}
+	
+	public void postaviTekst(String string) {
+		if(!textArea.getText().equals(""))
+			textArea.setText(textArea.getText() + string + "\n");
+		else 
+			textArea.setText(string);
+	}
+	
+
+	private void prikaziDodaj() {
+		DodajKursGUI prozor = new DodajKursGUI();
+		prozor.setLocationRelativeTo(contentPane);
+		prozor.setVisible(true);
 	}
 }
