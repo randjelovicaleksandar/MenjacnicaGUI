@@ -210,6 +210,11 @@ public class MenjacnicaGUI extends JFrame {
 	private JButton getBtnNewButton_1() {
 		if (btnNewButton_1 == null) {
 			btnNewButton_1 = new JButton("Izvr\u0161i zamenu");
+			btnNewButton_1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					prikaziZameni();
+				}
+			});
 			btnNewButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					prikaziObrisi();
@@ -345,18 +350,33 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem getMntmNewMenuItem_1() {
 		if (mntmNewMenuItem_1 == null) {
 			mntmNewMenuItem_1 = new JMenuItem("Dodaj kurs");
+			mntmNewMenuItem_1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					prikaziDodaj();
+				}
+			});
 		}
 		return mntmNewMenuItem_1;
 	}
 	private JMenuItem getMntmObriiKurs() {
 		if (mntmObriiKurs == null) {
 			mntmObriiKurs = new JMenuItem("Obri\u0161i kurs");
+			mntmObriiKurs.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					prikaziObrisi();
+				}
+			});
 		}
 		return mntmObriiKurs;
 	}
 	private JMenuItem getMntmIzvriZamenu() {
 		if (mntmIzvriZamenu == null) {
 			mntmIzvriZamenu = new JMenuItem("Izvr\u0161i zamenu");
+			mntmIzvriZamenu.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					prikaziZameni();
+				}
+			});
 		}
 		return mntmIzvriZamenu;
 	}
@@ -400,6 +420,12 @@ public class MenjacnicaGUI extends JFrame {
 	
 	private void prikaziObrisi() {
 		ObrisiKursGUI prozor = new ObrisiKursGUI();
+		prozor.setLocationRelativeTo(contentPane);
+		prozor.setVisible(true);
+	}
+	
+	private void prikaziZameni() {
+		IzvrsiZamenuGUI prozor = new IzvrsiZamenuGUI();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}
