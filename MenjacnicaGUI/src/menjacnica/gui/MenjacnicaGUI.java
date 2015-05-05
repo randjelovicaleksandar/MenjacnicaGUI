@@ -215,17 +215,18 @@ public class MenjacnicaGUI extends JFrame {
 					prikaziZameni();
 				}
 			});
-			btnNewButton.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
-					prikaziObrisi();
-				}
-			});
+			
 		}
 		return btnNewButton_1;
 	}
 	private JButton getBtnNewButton_2() {
 		if (btnNewButton_2 == null) {
 			btnNewButton_2 = new JButton("Obri\u0161i kurs");
+			btnNewButton_2.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					prikaziObrisi();
+				}
+			});
 		}
 		return btnNewButton_2;
 	}
@@ -405,27 +406,27 @@ public class MenjacnicaGUI extends JFrame {
 	}
 	
 	public void postaviTekst(String string) {
-		if(!textArea.getText().equals(""))
-			textArea.setText(textArea.getText() + string + "\n");
+		if(!textArea_1.getText().equals(""))
+			textArea_1.setText(textArea_1.getText() + string + "\n");
 		else 
-			textArea.setText(string);
+			textArea_1.setText(string);
 	}
 	
 
 	private void prikaziDodaj() {
-		DodajKursGUI prozor = new DodajKursGUI();
+		DodajKursGUI prozor = new DodajKursGUI(this);
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}
 	
 	private void prikaziObrisi() {
-		ObrisiKursGUI prozor = new ObrisiKursGUI();
+		ObrisiKursGUI prozor = new ObrisiKursGUI(this);
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}
 	
 	private void prikaziZameni() {
-		IzvrsiZamenuGUI prozor = new IzvrsiZamenuGUI();
+		IzvrsiZamenuGUI prozor = new IzvrsiZamenuGUI(this);
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}

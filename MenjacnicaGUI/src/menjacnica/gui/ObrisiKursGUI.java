@@ -37,26 +37,12 @@ public class ObrisiKursGUI extends JFrame {
 	private JCheckBox chckbxNewCheckBox;
 	private MenjacnicaGUI gui;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ObrisiKursGUI frame = new ObrisiKursGUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the frame.
 	 */
-	public ObrisiKursGUI() {
+	public ObrisiKursGUI(MenjacnicaGUI gui) {
 		setTitle("Obrisi kurs");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -80,6 +66,7 @@ public class ObrisiKursGUI extends JFrame {
 		contentPane.add(getChckbxNewCheckBox(), "cell 0 6,grow");
 		contentPane.add(getBtnNewButton(), "cell 0 7,grow");
 		contentPane.add(getBtnNewButton_1(), "cell 1 7,grow");
+		this.gui = gui;
 	}
 
 	private JLabel getLabel_1() {

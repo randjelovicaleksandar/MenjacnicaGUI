@@ -40,26 +40,12 @@ public class IzvrsiZamenuGUI extends JFrame {
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private MenjacnicaGUI gui;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					IzvrsiZamenuGUI frame = new IzvrsiZamenuGUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the frame.
 	 */
-	public IzvrsiZamenuGUI() {
+	public IzvrsiZamenuGUI(MenjacnicaGUI gui) {
 		setResizable(false);
 		setTitle("Izvrsi izmenu");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -82,6 +68,7 @@ public class IzvrsiZamenuGUI extends JFrame {
 		contentPane.add(getSlider(), "cell 0 5 6 1,grow");
 		contentPane.add(getBtnIzvrsiZamenu(), "cell 0 6 2 1,grow");
 		contentPane.add(getBtnOdustani(), "cell 4 6 2 1,grow");
+		this.gui = gui;
 	}
 
 	private JLabel getLblKupovniKurs() {

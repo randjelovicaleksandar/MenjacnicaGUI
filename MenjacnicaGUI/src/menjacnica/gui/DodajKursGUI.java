@@ -39,26 +39,12 @@ public class DodajKursGUI extends JFrame {
 	private JButton btnNewButton_1;
 	private MenjacnicaGUI gui;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					DodajKursGUI frame = new DodajKursGUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the frame.
 	 */
-	public DodajKursGUI() {
+	public DodajKursGUI(MenjacnicaGUI gui) {
 		setTitle("Dodaj kurs");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -81,6 +67,7 @@ public class DodajKursGUI extends JFrame {
 		contentPane.add(getTextField_5());
 		contentPane.add(getBtnNewButton());
 		contentPane.add(getBtnNewButton_1());
+		this.gui = gui;
 	}
 	private JLabel getLabel_1() {
 		if (lblIme == null) {
