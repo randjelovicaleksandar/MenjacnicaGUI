@@ -156,6 +156,7 @@ public class DodajKursGUI extends JFrame {
 							+ " Prodajni kurs: " +textField_2.getText() + " Kupovni kurs: " +textField_3.getText()
 							+ " Srednji kurs: " +textField_4.getText() + " Skraceni naziv: " +textField_5.getText();
 					gui.postaviTekst(string);
+					dispose();
 				}
 			});
 		}

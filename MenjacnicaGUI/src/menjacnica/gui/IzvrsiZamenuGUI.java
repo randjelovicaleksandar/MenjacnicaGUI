@@ -173,6 +173,7 @@ public class IzvrsiZamenuGUI extends JFrame {
 						string = lblValuta.getText() + " " + comboBox.getSelectedItem().toString() + " " + lblIznos.getText() + ": "
 								+ textField_2.getText() + " " + lblVrstaTransakcije.getText() + ": " + rdbtnNewRadioButton_1.getText();
 					gui.postaviTekst(string);
+					dispose();
 				}
 			});
 		}
